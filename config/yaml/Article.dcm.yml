@@ -1,0 +1,13 @@
+net\dontdrinkandroot\doctrineexample\entity\Article:
+    type: entity
+    table: Article
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+        price:
+            type: float

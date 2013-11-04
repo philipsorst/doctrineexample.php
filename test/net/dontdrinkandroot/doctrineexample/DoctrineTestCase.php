@@ -25,7 +25,7 @@ class DoctrineTestCase extends \PHPUnit_Extensions_Database_TestCase
     {
         $this->pdo = new PDO('sqlite::memory:');
 
-        $config = new Configuration();
+        $config = $this->getConfiguration();
         $connectionParams = array(
             'pdo' => $this->pdo
         );
@@ -51,4 +51,8 @@ class DoctrineTestCase extends \PHPUnit_Extensions_Database_TestCase
         return $this->createXMLDataSet(realpath($databasePath));
     }
 
+    protected function getConfiguration()
+    {
+        return new Configuration();
+    }
 }
