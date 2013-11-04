@@ -1,5 +1,4 @@
 <?php
 
-include_once('AutoLoader.php');
-AutoLoader::registerDirectory('../src');
-AutoLoader::registerDirectory('../test');
+$loader = require __DIR__ . '/../lib/autoload.php';
+$loader->add('', __DIR__);
