@@ -1,0 +1,10 @@
+{
+    "config": {
+        "vendor-dir": "lib"
+    },
+
+    "require": {
+        "phpunit/dbunit" : "1.2.*",
+        "doctrine/orm" : "2.4.*"
+    }
+}
