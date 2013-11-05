@@ -22,6 +22,13 @@ class Article
      */
     protected $price;
 
+    protected $tags;
+
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
+
     /**
      * @param int $id
      */
@@ -70,4 +77,13 @@ class Article
         return $this->price;
     }
 
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+    }
 }

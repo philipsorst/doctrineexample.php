@@ -4,9 +4,9 @@
 namespace net\dontdrinkandroot\dbal;
 
 
-use net\dontdrinkandroot\doctrineexample\DoctrineTestCase;
+use net\dontdrinkandroot\doctrineexample\dbal\DoctrineDbalTestCase;
 
-class TransactionTest extends DoctrineTestCase
+class TransactionTest extends DoctrineDbalTestCase
 {
 
     public function testSimpleTransaction()

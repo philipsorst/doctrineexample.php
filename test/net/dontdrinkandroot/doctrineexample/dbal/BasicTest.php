@@ -4,10 +4,10 @@
 namespace net\dontdrinkandroot\dbal;
 
 
+use net\dontdrinkandroot\doctrineexample\dbal\DoctrineDbalTestCase;
 use \PDO;
-use net\dontdrinkandroot\doctrineexample\DoctrineTestCase;
 
-class BasicTest extends DoctrineTestCase
+class BasicTest extends DoctrineDbalTestCase
 {
 
     public function testExecuteQuery()

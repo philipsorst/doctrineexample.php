@@ -11,3 +11,15 @@ net\dontdrinkandroot\doctrineexample\entity\Article:
             type: string
         price:
             type: float
+    manyToMany:
+        tags:
+            targetEntity: net\dontdrinkandroot\doctrineexample\entity\Tag
+            inversedBy: articles
+            joinTable:
+                name: Article_Tag
+                joinColumns:
+                  articles_id:
+                    referencedColumnName: id
+                inverseJoinColumns:
+                  tags_id:
+                    referencedColumnName: id

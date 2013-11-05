@@ -3,10 +3,10 @@
 
 namespace net\dontdrinkandroot\dbal;
 
+use net\dontdrinkandroot\doctrineexample\dbal\DoctrineDbalTestCase;
 use \PDO;
-use net\dontdrinkandroot\doctrineexample\DoctrineTestCase;
 
-class QueryBuilderTest extends DoctrineTestCase
+class QueryBuilderTest extends DoctrineDbalTestCase
 {
 
     public function testSelect()

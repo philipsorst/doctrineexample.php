@@ -17,6 +17,13 @@ class Tag
      */
     protected $name;
 
+    protected $articles;
+
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
+
     /**
      * @param int $id
      */
@@ -48,5 +55,23 @@ class Tag
     {
         return $this->name;
     }
+
+    /**
+     * @param mixed $articles
+     */
+    public function setArticles($articles)
+    {
+        $this->articles = $articles;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+
+
 
 }

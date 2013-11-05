@@ -1,6 +1,6 @@
 <?php
 
-namespace net\dontdrinkandroot\doctrineexample;
+namespace net\dontdrinkandroot\doctrineexample\dbal;
 
 
 use Doctrine\DBAL\Connection;
@@ -8,7 +8,7 @@ use \PDO;
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\DriverManager;
 
-class DoctrineTestCase extends \PHPUnit_Extensions_Database_TestCase
+class DoctrineDbalTestCase extends \PHPUnit_Extensions_Database_TestCase
 {
 
     /**
@@ -32,21 +32,19 @@ class DoctrineTestCase extends \PHPUnit_Extensions_Database_TestCase
 
         $this->connection = DriverManager::getConnection($connectionParams, $config);
 
-        $createSql =
-            "CREATE TABLE IF NOT EXISTS `Article` ( " .
-                "`id` INTEGER NOT NULL, " .
-                "`name` TEXT NOT NULL, " .
-                "`price` FLOAT NOT NULL, " .
-                "PRIMARY KEY (`id`) " .
-            ");";
-        $this->pdo->query($createSql);
+        $createArticleSql =
+            "CREATE TABLE Article (id INTEGER NOT NULL, name VARCHAR(255) NOT NULL, price DOUBLE PRECISION NOT NULL, PRIMARY KEY(id));";
+        $this->pdo->query($createArticleSql);
+        $createTagSql =
+            "CREATE TABLE Tag (id INTEGER NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id));";
+        $this->pdo->query($createTagSql);
 
         return $this->createDefaultDBConnection($this->pdo);
     }
 
     public function getDataSet()
     {
-        $databasePath = __DIR__ . "/../../../data.xml";
+        $databasePath = __DIR__ . "/../../../../data.xml";
 
         return $this->createXMLDataSet(realpath($databasePath));
     }

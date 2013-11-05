@@ -4,9 +4,9 @@
 namespace net\dontdrinkandroot\dbal;
 
 
-use net\dontdrinkandroot\doctrineexample\DoctrineTestCase;
+use net\dontdrinkandroot\doctrineexample\dbal\DoctrineDbalTestCase;
 
-class SchemaManagerTest extends DoctrineTestCase
+class SchemaManagerTest extends DoctrineDbalTestCase
 {
 
     public function testListDatabases()

@@ -20,4 +20,16 @@
             <value>1.23</value>
         </row>
     </table>
+    <table name="Tag">
+        <column>id</column>
+        <column>name</column>
+        <row>
+            <value>1</value>
+            <value>Tag One</value>
+        </row>
+        <row>
+           <value>2</value>
+           <value>Tag Two</value>
+        </row>
+    </table>
 </dataset>
