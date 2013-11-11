@@ -38,6 +38,14 @@ class DoctrineDbalTestCase extends \PHPUnit_Extensions_Database_TestCase
         $createTagSql =
             "CREATE TABLE Tag (id INTEGER NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id));";
         $this->pdo->query($createTagSql);
+        $createArticleTagSql=
+            "CREATE TABLE Article_Tag (articles_id INTEGER NOT NULL, tags_id INTEGER NOT NULL, PRIMARY KEY(articles_id, tags_id));";
+        $this->pdo->query($createArticleTagSql);
+        $createArticleTagIndexSql = "CREATE INDEX IDX_2F475DCE1EBAF6CC ON Article_Tag (articles_id);";
+        $this->pdo->query($createArticleTagIndexSql);
+        $createArticleTagIndexSql = "CREATE INDEX IDX_2F475DCE8D7B4FB4 ON Article_Tag (tags_id);";
+        $this->pdo->query($createArticleTagIndexSql);
+
 
         return $this->createDefaultDBConnection($this->pdo);
     }
