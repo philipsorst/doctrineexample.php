@@ -55,4 +55,14 @@ class DoctrineOrmTestCase extends \PHPUnit_Extensions_Database_TestCase
         return $config;
     }
 
+    protected function getArticleRepository()
+    {
+        return $this->entityManager->getRepository('net\dontdrinkandroot\doctrineexample\entity\Article');
+    }
+
+    protected function getTagRepository()
+    {
+        return $this->entityManager->getRepository('net\dontdrinkandroot\doctrineexample\entity\Tag');
+    }
+
 }

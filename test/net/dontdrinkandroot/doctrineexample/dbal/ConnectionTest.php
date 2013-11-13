@@ -1,7 +1,7 @@
 <?php
 
 
-namespace net\dontdrinkandroot\dbal;
+namespace net\dontdrinkandroot\doctrineexample\dbal;
 
 
 class ConnectionTest

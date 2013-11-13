@@ -4,6 +4,8 @@
 namespace net\dontdrinkandroot\doctrineexample\entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 class Article
 {
 
@@ -22,6 +24,9 @@ class Article
      */
     protected $price;
 
+    /**
+     * @var ArrayCollection
+     */
     protected $tags;
 
     public function __construct()
@@ -77,6 +82,9 @@ class Article
         return $this->price;
     }
 
+    /**
+     * @return ArrayCollection
+     */
     public function getTags()
     {
         return $this->tags;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace net\dontdrinkandroot\dbal;
+namespace net\dontdrinkandroot\doctrineexample\dbal;
 
 
 use Doctrine\DBAL\Types\Type;
@@ -31,6 +31,18 @@ class BasicTest extends DoctrineDbalTestCase
             array("name" => "New Article", "price" => 6.66),
             array(Type::STRING, Type::FLOAT)
         );
+        $this->assertEquals(1, $numRows);
+    }
+
+    public function testDelete()
+    {
+        $numRows = $this->connection->delete("Article", array("id" => 1));
+        $this->assertEquals(1, $numRows);
+    }
+
+    public function testUpdate()
+    {
+        $numRows = $this->connection->update("Article", array("name" => "Changed Name"), array("id" => 1));
         $this->assertEquals(1, $numRows);
     }
 

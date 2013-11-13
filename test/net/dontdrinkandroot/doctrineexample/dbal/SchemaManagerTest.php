@@ -1,7 +1,7 @@
 <?php
 
 
-namespace net\dontdrinkandroot\dbal;
+namespace net\dontdrinkandroot\doctrineexample\dbal;
 
 
 use net\dontdrinkandroot\doctrineexample\dbal\DoctrineDbalTestCase;

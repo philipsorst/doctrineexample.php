@@ -40,9 +40,4 @@ class RepositoryTest extends DoctrineOrmTestCase
         $this->assertCount(3, $articles);
     }
 
-    protected function getArticleRepository()
-    {
-        return $this->entityManager->getRepository('net\dontdrinkandroot\doctrineexample\entity\Article');
-    }
-
 }
