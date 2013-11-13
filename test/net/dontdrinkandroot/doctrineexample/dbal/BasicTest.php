@@ -4,6 +4,7 @@
 namespace net\dontdrinkandroot\dbal;
 
 
+use Doctrine\DBAL\Types\Type;
 use net\dontdrinkandroot\doctrineexample\dbal\DoctrineDbalTestCase;
 use \PDO;
 
@@ -21,6 +22,16 @@ class BasicTest extends DoctrineDbalTestCase
         $this->assertCount(1, $result);
         $row = $result[0];
         $this->assertEquals(2, $row['id']);
+    }
+
+    public function testInsert()
+    {
+        $numRows = $this->connection->insert(
+            "Article",
+            array("name" => "New Article", "price" => 6.66),
+            array(Type::STRING, Type::FLOAT)
+        );
+        $this->assertEquals(1, $numRows);
     }
 
 }

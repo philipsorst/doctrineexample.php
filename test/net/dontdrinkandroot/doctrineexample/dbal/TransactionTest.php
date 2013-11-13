@@ -14,17 +14,19 @@ class TransactionTest extends DoctrineDbalTestCase
         $this->connection->beginTransaction();
         try {
             // do db stuff
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $this->connection->rollBack();
             throw $e;
         }
     }
 
-    public function testAnonymousConnection()
+    public function testAnonymousTransaction()
     {
-        $this->connection->transactional(function($connection) {
-           // do db stuff
-        });
+        $this->connection->transactional(
+            function ($connection) {
+                // do db stuff
+            }
+        );
     }
 
     public function testNestedTransaction()
@@ -47,7 +49,7 @@ class TransactionTest extends DoctrineDbalTestCase
                 throw $e;
             }
 
-             // do db stuff
+            // do db stuff
 
             $this->connection->commit(); // 1 => 0, "real" transaction committed
         } catch (Exception $e) {

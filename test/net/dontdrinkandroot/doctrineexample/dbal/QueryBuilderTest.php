@@ -13,6 +13,7 @@ class QueryBuilderTest extends DoctrineDbalTestCase
     {
         $queryBuilder = $this->connection->createQueryBuilder();
         $query = $queryBuilder->select("id")->from("Article", "article")->where($queryBuilder->expr()->gt('price', 4));
+
         $statement = $query->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
