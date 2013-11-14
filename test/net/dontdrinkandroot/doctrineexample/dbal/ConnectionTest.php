@@ -22,7 +22,7 @@ class ConnectionTest
         $config = new \Doctrine\DBAL\Configuration();
         $pdo = new \PDO('sqlite::memory:');
         $connectionParams = array(
-            'pdo' => $this->pdo
+            'pdo' => $pdo
         );
         $conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
     }

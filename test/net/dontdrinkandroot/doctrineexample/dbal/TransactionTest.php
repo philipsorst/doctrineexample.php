@@ -18,6 +18,7 @@ class TransactionTest extends DoctrineDbalTestCase
             $this->connection->rollBack();
             throw $e;
         }
+        $this->connection->commit();
     }
 
     public function testAnonymousTransaction()
@@ -52,6 +53,7 @@ class TransactionTest extends DoctrineDbalTestCase
             // do db stuff
 
             $this->connection->commit(); // 1 => 0, "real" transaction committed
+
         } catch (Exception $e) {
             $this->connection->rollback(); // 1 => 0, "real" transaction rollback
             throw $e;
